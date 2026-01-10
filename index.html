@@ -21,7 +21,7 @@
     body { font-family: 'Montserrat', sans-serif; background: var(--cream-bg); color: var(--dark-text); line-height: 1.6; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-    /* Updated Navigation */
+    /* --- FIXED NAVIGATION --- */
     header {
       background: white;
       padding: 0.8rem 5%;
@@ -38,6 +38,17 @@
     .nav-menu a { text-decoration: none; color: var(--dark-text); font-weight: 700; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
     .nav-menu a:hover { color: var(--deep-maroon); }
 
+    /* Mobile Menu Button */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--deep-maroon);
+      background: none;
+      border: none;
+    }
+
+    /* --- HERO --- */
     .hero {
       padding: 140px 5% 100px;
       text-align: center;
@@ -48,6 +59,7 @@
     .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 1rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
     .hero p { font-size: 1.3rem; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #f0f0f0; }
 
+    /* --- SECTIONS --- */
     section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
     h2 { text-align: center; font-size: 2.8rem; color: var(--deep-maroon); margin-bottom: 50px; }
     h2::after { content: ''; display: block; width: 80px; height: 4px; background: var(--gold-accent); margin: 15px auto; border-radius: 2px; }
@@ -65,8 +77,8 @@
     .card-img-container { height: 400px; overflow: hidden; background: #f9f9f9; }
     .card img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
     .card-body { padding: 30px; text-align: center; border-top: 5px solid var(--deep-maroon); }
-    .card h3 { color: var(--deep-maroon); margin-bottom: 10px; font-size: 1.6rem; }
-
+    
+    /* --- PRICE CARD --- */
     .price-card { 
       background: var(--deep-maroon); 
       color: white; 
@@ -77,14 +89,14 @@
       background-blend-mode: overlay;
       background-size: cover;
     }
-    .price-card h2 { color: white; margin-bottom: 30px;}
     .price-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 1.2rem; }
     .price-table td { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); }
     .price-val { font-weight: 700; color: var(--gold-accent); text-align: right; }
 
-    .btn { background: var(--gold-accent); color: white; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: 700; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(197,160,89,0.4); border: none; cursor: pointer; }
-    .btn:hover { background: #b08d4a; transform: scale(1.05); }
+    .btn { background: var(--gold-accent); color: white; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: 700; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(197,160,89,0.4); border: none; }
+    .btn:hover { background: #b08d4a; transform: scale(1.05); color: white; }
 
+    /* --- FOOTER --- */
     .footer { background: #1a0101; color: white; padding: 80px 5%; text-align: center; }
     .footer a { color: var(--gold-accent); text-decoration: none; }
     
@@ -94,14 +106,28 @@
       width: 65px; height: 65px; border-radius: 50%; 
       display: flex; align-items: center; justify-content: center; 
       font-size: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
-      text-decoration: none; z-index: 1000; 
+      text-decoration: none; z-index: 2000; 
     }
 
-    /* Mobile Toggle */
-    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--deep-maroon); }
-
+    /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 768px) {
-      .nav-menu { display: none; } /* Simplified for this version */
+      .menu-toggle { display: block; }
+      
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+
+      .nav-menu.active { display: flex; }
+      .nav-menu li { margin: 10px 0; }
       .hero h1 { font-size: 2.8rem; }
       .price-card { padding: 25px; }
     }
@@ -111,8 +137,11 @@
 
 <header>
   <a href="#" class="logo">KILISHI DELIGHT</a>
+  
+  <button class="menu-toggle" id="mobile-menu">☰</button>
+  
   <nav>
-    <ul class="nav-menu">
+    <ul class="nav-menu" id="nav-list">
       <li><a href="#home">Home</a></li>
       <li><a href="#products">Shop Packs</a></li>
       <li><a href="#orders">Pricing</a></li>
@@ -123,7 +152,7 @@
 
 <div class="hero" id="home">
   <h1>The Ultimate Spice Experience</h1>
-  <p>Authentic Northern Nigerian Kilishi. Premium beef, hand-selected spices, and a tradition of excellence delivered straight to your door.</p>
+  <p>Authentic Northern Nigerian Kilishi. Premium beef, hand-selected spices, and excellence delivered straight to your door.</p>
   <a href="#products" class="btn">View Our Packs</a>
 </div>
 
@@ -136,7 +165,7 @@
       </div>
       <div class="card-body">
         <h3>Small Waka Pack</h3>
-        <p>Your perfect on-the-go companion. Expertly seasoned for that quick spicy hit wherever you are.</p>
+        <p>Your perfect on-the-go companion. Expertly seasoned for that quick spicy hit.</p>
         <p style="font-weight: bold; margin-top: 10px; color: var(--deep-maroon);">₦2,500</p>
       </div>
     </div>
@@ -147,7 +176,7 @@
       </div>
       <div class="card-body">
         <h3>Family Jolly Pack</h3>
-        <p>More meat, more joy! Our premium containers made for sharing with the ones who matter most.</p>
+        <p>More meat, more joy! Our premium containers made for sharing.</p>
         <p style="font-weight: bold; margin-top: 10px; color: var(--deep-maroon);">₦4,500</p>
       </div>
     </div>
@@ -156,7 +185,7 @@
 
 <section id="orders">
   <div class="price-card">
-    <h2>Price List</h2>
+    <h2 style="color: white;">Price List</h2>
     <table class="price-table">
       <tr>
         <td>Small Waka Pack</td>
@@ -167,12 +196,12 @@
         <td class="price-val">₦4,500</td>
       </tr>
       <tr>
-        <td>Bulk Orders (10+ Packs)</td>
-        <td class="price-val">Contact for Discount</td>
+        <td>Bulk Orders (10+)</td>
+        <td class="price-val">Contact Us</td>
       </tr>
     </table>
     <div style="text-align: center; margin-top: 40px;">
-        <a href="https://wa.me/2348106558031" class="btn">Order Now via WhatsApp</a>
+        <a href="https://wa.me/2348106558031" class="btn">Order via WhatsApp</a>
     </div>
   </div>
 </section>
@@ -183,7 +212,7 @@
   <div style="border-top: 1px solid #333; padding-top: 30px; width: 100%;">
     <p><strong>Factory:</strong> 13 Sanusi Street, Shomolu, Lagos.</p>
     <p><strong>Email:</strong> <a href="mailto:ojmariaventures@gmail.com">ojmariaventures@gmail.com</a></p>
-    <p><strong>Call/WhatsApp:</strong> 0810 655 8031 | 0810 988 9695</p>
+    <p><strong>Hotlines:</strong> 0810 655 8031 | 0810 988 9695</p>
   </div>
   <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 OJ. Maria Ventures. All Rights Reserved.</p>
 </div>
@@ -191,6 +220,23 @@
 <a href="https://wa.me/2348106558031" class="whatsapp-btn" title="Chat with us">
   <span style="font-style: normal;">💬</span>
 </a>
+
+<script>
+  // Mobile Menu Logic
+  const menuBtn = document.getElementById('mobile-menu');
+  const navList = document.getElementById('nav-list');
+
+  menuBtn.addEventListener('click', () => {
+    navList.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
