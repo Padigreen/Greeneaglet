@@ -21,115 +21,86 @@
     body { font-family: 'Montserrat', sans-serif; background: var(--cream-bg); color: var(--dark-text); line-height: 1.6; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-    /* --- FIXED NAVIGATION --- */
+    /* --- COMPACT NAVIGATION --- */
     header {
       background: white;
       padding: 0.8rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 15px rgba(99,1,1,0.1);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
       position: sticky; top: 0; z-index: 1000;
-      border-bottom: 3px solid var(--deep-maroon);
+      border-bottom: 2px solid var(--deep-maroon);
     }
-    .logo { color: var(--deep-maroon); font-weight: 900; font-size: 1.4rem; text-decoration: none; letter-spacing: 1px; }
+    .logo { color: var(--deep-maroon); font-weight: 900; font-size: 1.3rem; text-decoration: none; letter-spacing: 0.5px; flex-shrink: 0; }
     
-    .nav-menu { display: flex; gap: 25px; list-style: none; }
-    .nav-menu a { text-decoration: none; color: var(--dark-text); font-weight: 700; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
+    .nav-menu { display: flex; gap: 20px; list-style: none; align-items: center; }
+    .nav-menu a { text-decoration: none; color: var(--dark-text); font-weight: 700; font-size: 0.85rem; transition: 0.3s; text-transform: uppercase; letter-spacing: 0.5px; }
     .nav-menu a:hover { color: var(--deep-maroon); }
 
-    /* Mobile Menu Button */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: var(--deep-maroon);
-      background: none;
-      border: none;
-    }
+    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--deep-maroon); background: none; border: none; }
 
     /* --- HERO --- */
     .hero {
-      padding: 140px 5% 100px;
+      padding: 120px 5% 80px;
       text-align: center;
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://raw.githubusercontent.com/Padigreen/Project_images/refs/heads/main/kilishi%20delight%20background(2).jpg') center/cover;
       color: white;
       background-attachment: fixed;
     }
-    .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 1rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-    .hero p { font-size: 1.3rem; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #f0f0f0; }
+    .hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 1rem; color: white; }
+    .hero p { font-size: 1.1rem; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; color: #e0e0e0; }
 
     /* --- SECTIONS --- */
-    section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-    h2 { text-align: center; font-size: 2.8rem; color: var(--deep-maroon); margin-bottom: 50px; }
-    h2::after { content: ''; display: block; width: 80px; height: 4px; background: var(--gold-accent); margin: 15px auto; border-radius: 2px; }
+    section { padding: 60px 5%; max-width: 1100px; margin: 0 auto; }
+    h2 { text-align: center; font-size: 2.2rem; color: var(--deep-maroon); margin-bottom: 40px; }
+    h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--gold-accent); margin: 10px auto; }
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-    .card { 
-      background: white; 
-      border-radius: 20px; 
-      overflow: hidden; 
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
-      transition: transform 0.4s ease;
-      border: 1px solid #f2e8e8;
-    }
-    .card:hover { transform: translateY(-10px); }
-    .card-img-container { height: 400px; overflow: hidden; background: #f9f9f9; }
-    .card img { width: 100%; height: 100%; object-fit: contain; padding: 20px; }
-    .card-body { padding: 30px; text-align: center; border-top: 5px solid var(--deep-maroon); }
-    
-    /* --- PRICE CARD --- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #eee; text-align: center; display: flex; flex-direction: column; }
+    .card-img-container { height: 320px; background: #fafafa; padding: 15px; }
+    .card img { width: 100%; height: 100%; object-fit: contain; }
+    .card-body { padding: 20px 25px 30px; flex-grow: 1; }
+    .card h3 { color: var(--deep-maroon); margin-bottom: 10px; font-size: 1.4rem; }
+    .card p { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
+
+    /* --- BUTTONS --- */
+    .btn { background: var(--gold-accent); color: white; padding: 14px 30px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 0.9rem; display: inline-block; transition: 0.3s; border: none; }
+    .btn:hover { background: var(--deep-maroon); transform: translateY(-2px); color: white; }
+    .btn-sm { padding: 10px 20px; font-size: 0.8rem; background: var(--deep-maroon); }
+
+    /* --- PRICE SECTION --- */
     .price-card { 
-      background: var(--deep-maroon); 
-      color: white; 
-      padding: 50px; 
-      border-radius: 25px; 
-      margin-top: 40px;
-      background-image: url('https://raw.githubusercontent.com/Padigreen/Project_images/refs/heads/main/kilishi%20delight%20background(1).jpg');
+      background: var(--deep-maroon) url('https://raw.githubusercontent.com/Padigreen/Project_images/refs/heads/main/kilishi%20delight%20background(1).jpg') center/cover;
       background-blend-mode: overlay;
-      background-size: cover;
+      color: white; padding: 40px; border-radius: 20px; margin-top: 20px;
     }
-    .price-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 1.2rem; }
-    .price-table td { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .price-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .price-table td { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.15); font-weight: 400; }
     .price-val { font-weight: 700; color: var(--gold-accent); text-align: right; }
 
-    .btn { background: var(--gold-accent); color: white; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: 700; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(197,160,89,0.4); border: none; }
-    .btn:hover { background: #b08d4a; transform: scale(1.05); color: white; }
-
     /* --- FOOTER --- */
-    .footer { background: #1a0101; color: white; padding: 80px 5%; text-align: center; }
-    .footer a { color: var(--gold-accent); text-decoration: none; }
+    .footer { background: #120101; color: white; padding: 60px 5%; text-align: center; }
+    .footer a { color: var(--gold-accent); text-decoration: none; font-weight: 700; }
     
-    .whatsapp-btn { 
-      position: fixed; bottom: 30px; right: 30px; 
-      background: #25D366; color: white; 
-      width: 65px; height: 65px; border-radius: 50%; 
-      display: flex; align-items: center; justify-content: center; 
-      font-size: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
-      text-decoration: none; z-index: 2000; 
-    }
+    .whatsapp-btn { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); text-decoration: none; z-index: 2000; }
 
-    /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 768px) {
+      header { padding: 1rem 5%; }
       .menu-toggle { display: block; }
-      
       .nav-menu {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        text-align: center;
+        top: 100%; left: 0; width: 100%;
+        background: white; padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       }
-
       .nav-menu.active { display: flex; }
-      .nav-menu li { margin: 10px 0; }
-      .hero h1 { font-size: 2.8rem; }
-      .price-card { padding: 25px; }
+      .nav-menu li { width: 100%; }
+      .nav-menu a { display: block; padding: 10px; }
+      .hero { padding: 100px 5% 60px; }
+      .price-card { padding: 20px; }
     }
   </style>
 </head>
@@ -143,7 +114,7 @@
   <nav>
     <ul class="nav-menu" id="nav-list">
       <li><a href="#home">Home</a></li>
-      <li><a href="#products">Shop Packs</a></li>
+      <li><a href="#products">Shop</a></li>
       <li><a href="#orders">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -152,12 +123,12 @@
 
 <div class="hero" id="home">
   <h1>The Ultimate Spice Experience</h1>
-  <p>Authentic Northern Nigerian Kilishi. Premium beef, hand-selected spices, and excellence delivered straight to your door.</p>
-  <a href="#products" class="btn">View Our Packs</a>
+  <p>Authentic Northern Nigerian Kilishi. Premium beef, hand-selected spices, and traditional excellence delivered straight to your door.</p>
+  <a href="#products" class="btn">Shop Now</a>
 </div>
 
 <section id="products">
-  <h2>Available Sizes</h2>
+  <h2>Available Packs</h2>
   <div class="grid">
     <div class="card">
       <div class="card-img-container">
@@ -165,8 +136,9 @@
       </div>
       <div class="card-body">
         <h3>Small Waka Pack</h3>
-        <p>Your perfect on-the-go companion. Expertly seasoned for that quick spicy hit.</p>
-        <p style="font-weight: bold; margin-top: 10px; color: var(--deep-maroon);">₦2,500</p>
+        <p>The perfect companion for your daily move. Spicy, crunchy, and portable.</p>
+        <p style="font-weight: 700; font-size: 1.2rem; color: var(--deep-maroon); margin-bottom: 20px;">₦2,500</p>
+        <a href="https://wa.me/2348106558031?text=Hello%20Kilishi%20Delight!%20I%20want%20to%20order%20the%20Small%20Waka%20Pack." class="btn btn-sm">Buy Now</a>
       </div>
     </div>
 
@@ -176,8 +148,9 @@
       </div>
       <div class="card-body">
         <h3>Family Jolly Pack</h3>
-        <p>More meat, more joy! Our premium containers made for sharing.</p>
-        <p style="font-weight: bold; margin-top: 10px; color: var(--deep-maroon);">₦4,500</p>
+        <p>Big enough for the whole squad. High-quality tubs packed with savory joy.</p>
+        <p style="font-weight: 700; font-size: 1.2rem; color: var(--deep-maroon); margin-bottom: 20px;">₦4,500</p>
+        <a href="https://wa.me/2348106558031?text=Hello%20Kilishi%20Delight!%20I%20want%20to%20order%20the%20Family%20Jolly%20Pack." class="btn btn-sm">Buy Now</a>
       </div>
     </div>
   </div>
@@ -185,7 +158,7 @@
 
 <section id="orders">
   <div class="price-card">
-    <h2 style="color: white;">Price List</h2>
+    <h2 style="color: white; font-size: 1.8rem; margin-bottom: 20px;">Price Summary</h2>
     <table class="price-table">
       <tr>
         <td>Small Waka Pack</td>
@@ -196,33 +169,34 @@
         <td class="price-val">₦4,500</td>
       </tr>
       <tr>
-        <td>Bulk Orders (10+)</td>
-        <td class="price-val">Contact Us</td>
+        <td>Wholesale Orders</td>
+        <td class="price-val">Call for Quote</td>
       </tr>
     </table>
-    <div style="text-align: center; margin-top: 40px;">
-        <a href="https://wa.me/2348106558031" class="btn">Order via WhatsApp</a>
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="https://wa.me/2348106558031" class="btn" style="background: white; color: var(--deep-maroon);">Order via WhatsApp</a>
     </div>
   </div>
 </section>
 
 <div class="footer" id="contact">
-  <h2 style="color: white;">KILISHI DELIGHT</h2>
-  <p style="margin-bottom: 20px; opacity: 0.8;">Beef • Pepper • Ginger • Garlic • Onion • Salt • Groundnut</p>
-  <div style="border-top: 1px solid #333; padding-top: 30px; width: 100%;">
-    <p><strong>Factory:</strong> 13 Sanusi Street, Shomolu, Lagos.</p>
-    <p><strong>Email:</strong> <a href="mailto:ojmariaventures@gmail.com">ojmariaventures@gmail.com</a></p>
-    <p><strong>Hotlines:</strong> 0810 655 8031 | 0810 988 9695</p>
+  <h2 style="color: white; margin-bottom: 10px;">KILISHI DELIGHT</h2>
+  <p style="margin-bottom: 30px; font-size: 0.9rem; opacity: 0.7;">OJ. Maria Ventures - Quality You Can Taste</p>
+  
+  <div style="max-width: 400px; margin: 0 auto; text-align: left; font-size: 0.9rem;">
+    <p>📍 13 Sanusi Street, Shomolu, Lagos.</p>
+    <p>📧 <a href="mailto:ojmariaventures@gmail.com">ojmariaventures@gmail.com</a></p>
+    <p>📞 0810 655 8031 | 0810 988 9695</p>
   </div>
-  <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 OJ. Maria Ventures. All Rights Reserved.</p>
+  
+  <p style="margin-top: 50px; font-size: 0.75rem; opacity: 0.4;">&copy; 2026 OJ. Maria Ventures. All Rights Reserved.</p>
 </div>
 
-<a href="https://wa.me/2348106558031" class="whatsapp-btn" title="Chat with us">
+<a href="https://wa.me/2348106558031" class="whatsapp-btn">
   <span style="font-style: normal;">💬</span>
 </a>
 
 <script>
-  // Mobile Menu Logic
   const menuBtn = document.getElementById('mobile-menu');
   const navList = document.getElementById('nav-list');
 
@@ -230,7 +204,6 @@
     navList.classList.toggle('active');
   });
 
-  // Close menu when a link is clicked
   document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
       navList.classList.remove('active');
