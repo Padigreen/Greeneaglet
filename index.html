@@ -17,13 +17,14 @@
       --dark-text: #2d2424;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; background: var(--cream-bg); color: var(--dark-text); line-height: 1.6; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
+    /* Updated Navigation */
     header {
       background: white;
-      padding: 1rem 5%;
+      padding: 0.8rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -31,7 +32,11 @@
       position: sticky; top: 0; z-index: 1000;
       border-bottom: 3px solid var(--deep-maroon);
     }
-    .logo { color: var(--deep-maroon); font-weight: 900; font-size: 1.6rem; text-decoration: none; letter-spacing: 1px; }
+    .logo { color: var(--deep-maroon); font-weight: 900; font-size: 1.4rem; text-decoration: none; letter-spacing: 1px; }
+    
+    .nav-menu { display: flex; gap: 25px; list-style: none; }
+    .nav-menu a { text-decoration: none; color: var(--dark-text); font-weight: 700; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
+    .nav-menu a:hover { color: var(--deep-maroon); }
 
     .hero {
       padding: 140px 5% 100px;
@@ -81,6 +86,7 @@
     .btn:hover { background: #b08d4a; transform: scale(1.05); }
 
     .footer { background: #1a0101; color: white; padding: 80px 5%; text-align: center; }
+    .footer a { color: var(--gold-accent); text-decoration: none; }
     
     .whatsapp-btn { 
       position: fixed; bottom: 30px; right: 30px; 
@@ -91,7 +97,11 @@
       text-decoration: none; z-index: 1000; 
     }
 
+    /* Mobile Toggle */
+    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--deep-maroon); }
+
     @media (max-width: 768px) {
+      .nav-menu { display: none; } /* Simplified for this version */
       .hero h1 { font-size: 2.8rem; }
       .price-card { padding: 25px; }
     }
@@ -101,13 +111,20 @@
 
 <header>
   <a href="#" class="logo">KILISHI DELIGHT</a>
-  <div style="font-weight: 700; color: var(--gold-accent);">OJ. MARIA VENTURES</div>
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Shop Packs</a></li>
+      <li><a href="#orders">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<div class="hero">
+<div class="hero" id="home">
   <h1>The Ultimate Spice Experience</h1>
   <p>Authentic Northern Nigerian Kilishi. Premium beef, hand-selected spices, and a tradition of excellence delivered straight to your door.</p>
-  <a href="#orders" class="btn">View Our Packs</a>
+  <a href="#products" class="btn">View Our Packs</a>
 </div>
 
 <section id="products">
@@ -160,11 +177,12 @@
   </div>
 </section>
 
-<div class="footer">
+<div class="footer" id="contact">
   <h2 style="color: white;">KILISHI DELIGHT</h2>
   <p style="margin-bottom: 20px; opacity: 0.8;">Beef • Pepper • Ginger • Garlic • Onion • Salt • Groundnut</p>
   <div style="border-top: 1px solid #333; padding-top: 30px; width: 100%;">
     <p><strong>Factory:</strong> 13 Sanusi Street, Shomolu, Lagos.</p>
+    <p><strong>Email:</strong> <a href="mailto:ojmariaventures@gmail.com">ojmariaventures@gmail.com</a></p>
     <p><strong>Call/WhatsApp:</strong> 0810 655 8031 | 0810 988 9695</p>
   </div>
   <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 OJ. Maria Ventures. All Rights Reserved.</p>
