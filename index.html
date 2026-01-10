@@ -3,355 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kilishi Delight - Premium Nigerian Spicy Beef Jerky</title>
-  <meta name="description" content="Buy authentic Kilishi Delight - the best spicy Nigerian beef jerky from OJ. Maria Ventures in Lagos. Order now via WhatsApp!">
-
+  <title>Kilishi Delight | Premium Spicy Beef Jerky</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #c2410c;       /* warm spicy orange-red */
-      --primary-dark: #9a3412;
-      --accent: #eab308;
-      --text: #1f2937;
-      --text-light: #4b5563;
-      --bg: #ffffff;
-      --bg-soft: #f9fafb;
-      --border: #e5e7eb;
+      --brand-red: #8B0000;      /* Matches your label deep red */
+      --brand-gold: #D4AF37;     /* Elegant gold accent */
+      --dark: #1a1a1a;
+      --light: #fffcf5;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
     /* Header */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      z-index: 1000;
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 5vw;
+      background: white;
+      padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky; top: 0; z-index: 1000;
     }
+    .logo { color: var(--brand-red); font-weight: 900; font-size: 1.5rem; text-decoration: none; }
 
-    .logo {
-      font-size: 1.6rem;
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.25s;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.9rem;
-      cursor: pointer;
-      color: var(--primary);
-    }
-
-    /* Hero */
+    /* Hero Section */
     .hero {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
+      padding: 100px 5%;
       text-align: center;
-      padding: 0 5vw;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://redconfidential.com/wp-content/uploads/2018/08/kilishi.jpeg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1000508086.jpg') center/cover;
       color: white;
-      margin-top: 70px;
     }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: var(--brand-gold); }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-    .hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.7);
-    }
+    /* Product Grid */
+    section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+    h2 { text-align: center; font-size: 2.5rem; color: var(--brand-red); margin-bottom: 40px; position: relative; }
+    h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--brand-gold); margin: 10px auto; }
 
-    .hero p {
-      font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      opacity: 0.95;
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-bottom: 4px solid var(--brand-red); }
+    .card img { width: 100%; height: 350px; object-fit: cover; }
+    .card-body { padding: 20px; text-align: center; }
 
-    .btn {
-      display: inline-block;
-      padding: 1rem 2.4rem;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1.15rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(194,65,12,0.35);
-    }
+    /* Price Table */
+    .price-section { background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th { background: var(--brand-red); color: white; padding: 15px; text-align: left; }
+    td { padding: 15px; border-bottom: 1px solid #eee; }
+    .price-tag { font-weight: bold; color: var(--brand-red); }
 
-    .btn:hover {
-      transform: translateY(-4px);
-      background: var(--primary-dark);
-      box-shadow: 0 15px 35px rgba(194,65,12,0.45);
-    }
+    /* Contact/Footer */
+    .footer { background: var(--brand-red); color: white; padding: 60px 5%; text-align: center; }
+    .btn { background: var(--brand-gold); color: var(--dark); padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: 600; display: inline-block; transition: 0.3s; }
+    .btn:hover { transform: scale(1.05); background: white; }
 
-    /* Sections */
-    section {
-      padding: 7rem 5vw;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 3rem;
-      color: var(--primary);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 1.8rem;
-      text-align: center;
-    }
-
-    .card h3 {
-      margin-bottom: 0.8rem;
-      color: var(--primary);
-    }
-
-    /* Contact */
-    .contact-info {
-      text-align: center;
-      background: var(--bg-soft);
-      border-radius: 16px;
-      padding: 3rem 2rem;
-      margin: 3rem auto;
-      max-width: 700px;
-    }
-
-    .contact-info p {
-      margin: 1rem 0;
-      font-size: 1.1rem;
-    }
-
-    /* WhatsApp Floating Button */
-    .whatsapp-float {
-      position: fixed;
-      width: 70px;
-      height: 70px;
-      bottom: 30px;
-      right: 30px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 40px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.15);
-      box-shadow: 0 15px 35px rgba(37,213,102,0.4);
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 80%;
-        max-width: 320px;
-        background: white;
-        flex-direction: column;
-        justify-content: center;
-        transition: right 0.4s ease;
-        box-shadow: -8px 0 25px rgba(0,0,0,0.15);
-      }
-
-      .nav-links.active {
-        right: 0;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero {
-        margin-top: 60px;
-      }
-
-      .whatsapp-float {
-        width: 65px;
-        height: 65px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 36px;
-      }
-    }
+    .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-decoration: none; z-index: 1000; }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="#" class="logo">Kilishi Delight</a>
-      
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Our Kilishi</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+<header>
+  <a href="#" class="logo">KILISHI DELIGHT</a>
+  <div style="font-size: 0.9rem; font-weight: 600;">OJ. MARIA VENTURES</div>
+</header>
 
-      <div class="menu-toggle">☰</div>
-    </nav>
-  </header>
+<div class="hero">
+  <h1>Authentic & Spicy</h1>
+  <p>Premium beef jerky prepared with traditional recipes and the finest natural spices. Made in the heart of Lagos for the ultimate snacking experience.</p>
+  <a href="#prices" class="btn">View Price List</a>
+</div>
 
-  <main>
-    <section class="hero" id="home">
-      <div>
-        <h1>Kilishi Delight</h1>
-        <p>Premium Spicy Nigerian Beef Jerky – Handcrafted with Love & Authentic Flavor!</p>
-        <a href="https://wa.me/2348106558031?text=Hello%20Kilishi%20Delight!%20I%27d%20like%20to%20place%20an%20order..." class="btn" target="_blank">Order on WhatsApp Now</a>
+<section id="products">
+  <h2>Our Specialties</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="1000508085.jpg" alt="Kilishi Packets">
+      <div class="card-body">
+        <h3>Snack Packets</h3>
+        <p>Perfectly sliced and sealed for freshness. Ideal for quick cravings.</p>
       </div>
-    </section>
-
-    <section id="products">
-      <h2>Our Delicious Kilishi</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="https://m.media-amazon.com/images/I/61wEaPDnB1L._AC_UF894,1000_QL80_.jpg" alt="Packaged Kilishi Delight in bag with red label">
-          <div class="card-content">
-            <h3>Classic Spicy</h3>
-            <p>Perfectly spiced slices with peanuts – ready to enjoy</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://bariboost.com/wp-content/uploads/kilishi.jpg.webp" alt="Fresh spiced Kilishi slices">
-          <div class="card-content">
-            <h3>Premium Cut</h3>
-            <p>Thin, tender, and loaded with authentic Northern flavors</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://raynaason.com/cdn/shop/files/KilishiHot.jpg?v=1743073504&width=1946" alt="Hot & spicy Kilishi Delight close-up">
-          <div class="card-content">
-            <h3>Extra Hot</h3>
-            <p>Fiery kick for true spice lovers – packed with heat!</p>
-          </div>
-        </div>
+    </div>
+    <div class="card">
+      <img src="1000508057.png" alt="Kilishi Containers">
+      <div class="card-body">
+        <h3>Family Tubs</h3>
+        <p>Large reusable containers. Great for travel and home sharing.</p>
       </div>
-    </section>
-
-    <section id="about">
-      <h2>About Kilishi Delight</h2>
-      <div class="contact-info">
-        <p style="font-size: 1.3rem; margin-bottom: 2rem;">
-          Kilishi Delight is proudly produced by <strong>OJ. Maria Ventures</strong>.<br>
-          We bring you the authentic taste of Nigerian spicy beef jerky – made with love and the finest ingredients.
-        </p>
+    </div>
+    <div class="card">
+      <img src="1000508087.png" alt="Kilishi Bowls">
+      <div class="card-body">
+        <h3>Party Bowls</h3>
+        <p>Microwave-safe round bowls for easy re-heating and serving.</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="contact">
-      <h2>Get In Touch & Order</h2>
-      <div class="contact-info">
-        <p><strong>Phone:</strong> <a href="tel:+2348106558031">+234 810 655 8031</a> | <a href="tel:+2348109889695">+234 810 988 9695</a></p>
-        <p><strong>Email:</strong> <a href="mailto:ojmariaventures@gmail.com">ojmariaventures@gmail.com</a></p>
-        <p><strong>Address:</strong> 14 Sanusi Street, Shomolu, Lagos</p>
-        <p style="margin-top: 2rem; font-style: italic;">Fast delivery available around Lagos • Bulk orders welcome</p>
-      </div>
-    </section>
-  </main>
+<section id="prices">
+  <div class="price-section">
+    <h2>Our Price List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Package Size</th>
+          <th>Price (₦)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mini Snack Pack</td>
+          <td class="price-tag">₦1,500</td>
+        </tr>
+        <tr>
+          <td>Standard Round Bowl</td>
+          <td class="price-tag">₦3,500</td>
+        </tr>
+        <tr>
+          <td>Medium Rectangular Tub</td>
+          <td class="price-tag">₦6,000</td>
+        </tr>
+        <tr>
+          <td>Large Family Jumbo Pack</td>
+          <td class="price-tag">₦12,000</td>
+        </tr>
+        <tr>
+          <td>Wholesale (Bulk 10+ Units)</td>
+          <td class="price-tag">Contact for Quote</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/2348106558031?text=Hello%20Kilishi%20Delight!%20I'm%20interested%20in%20ordering%20your%20delicious%20kilishi...%20%E2%9D%A4%EF%B8%8F" class="whatsapp-float" target="_blank">
-    <svg viewBox="0 0 24 24" width="45" height="45" fill="white"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zM12.03 17.5c-1.012 0-1.845-.299-2.69-.872l-3.08.81.824-3.012c-.607-1.008-.927-2.162-.926-3.373.002-3.648 2.961-6.61 6.607-6.611 3.649 0 6.614 2.962 6.615 6.611.001 3.649-2.962 6.611-6.611 6.611z"/><path d="M16.894 13.773c-.208-.104-1.227-.606-1.416-.676-.19-.07-.328-.104-.465.105-.137.208-.53.676-.65.81-.119.135-.239.148-.446.05-.208-.1-.874-.323-1.664-.998-.614-.53-.998-1.188-1.117-1.396-.119-.208-.013-.321.088-.425.087-.088.208-.208.297-.312.09-.104.12-.173.18-.288.06-.115.03-.215-.015-.312-.044-.098-.465-1.12-.636-1.534-.17-.414-.345-.36-.465-.367-.118-.007-.254-.007-.39-.007s-.289.025-.44.124c-.151.1-.568.554-.568 1.35 0 .796.582 1.564.662 1.673.08.109 1.13 1.728 2.742 2.423.487.21.866.336 1.162.427.489.19 1.01.162 1.39.098.434-.07 1.327-.542 1.514-.948.187-.407.187-.756.13-.829-.057-.073-.207-.104-.415-.208z"/></svg>
-  </a>
+<div class="footer">
+  <h2>Ready to Taste the Delight?</h2>
+  <p style="margin-bottom: 25px;">We deliver across Lagos and beyond.</p>
+  <a href="https://wa.me/2348106558031" class="btn">Place Your Order via WhatsApp</a>
+  <div style="margin-top: 40px; font-size: 0.9rem; opacity: 0.8;">
+    <p>13 Sanusi Street, Shomolu, Lagos</p>
+    <p>0810 655 8031 | 0810 988 9695</p>
+  </div>
+</div>
 
-  <script>
-    // Mobile menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
+<a href="https://wa.me/2348106558031" class="whatsapp-btn">
+  <i style="font-style: normal;">💬</i>
+</a>
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.remove('active');
-      });
-    });
-  </script>
 </body>
 </html>
