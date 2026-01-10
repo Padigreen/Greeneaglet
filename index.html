@@ -11,9 +11,9 @@
 
   <style>
     :root {
-      --deep-maroon: #630101;    /* Deep spice red from your label */
-      --gold-accent: #c5a059;    /* Muted gold to match label text */
-      --cream-bg: #fffdfa;       /* Warm background for readability */
+      --deep-maroon: #630101;    
+      --gold-accent: #c5a059;    
+      --cream-bg: #fffdfa;       
       --dark-text: #2d2424;
     }
 
@@ -21,7 +21,6 @@
     body { font-family: 'Montserrat', sans-serif; background: var(--cream-bg); color: var(--dark-text); line-height: 1.6; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-    /* Header */
     header {
       background: white;
       padding: 1rem 5%;
@@ -34,11 +33,9 @@
     }
     .logo { color: var(--deep-maroon); font-weight: 900; font-size: 1.6rem; text-decoration: none; letter-spacing: 1px; }
 
-    /* Hero Section */
     .hero {
       padding: 140px 5% 100px;
       text-align: center;
-      /* Using background(2) for the hero for a cleaner look */
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://raw.githubusercontent.com/Padigreen/Project_images/refs/heads/main/kilishi%20delight%20background(2).jpg') center/cover;
       color: white;
       background-attachment: fixed;
@@ -46,12 +43,10 @@
     .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); margin-bottom: 1rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
     .hero p { font-size: 1.3rem; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #f0f0f0; }
 
-    /* Section Styling */
     section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
     h2 { text-align: center; font-size: 2.8rem; color: var(--deep-maroon); margin-bottom: 50px; }
     h2::after { content: ''; display: block; width: 80px; height: 4px; background: var(--gold-accent); margin: 15px auto; border-radius: 2px; }
 
-    /* Product Grid */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
     .card { 
       background: white; 
@@ -67,7 +62,6 @@
     .card-body { padding: 30px; text-align: center; border-top: 5px solid var(--deep-maroon); }
     .card h3 { color: var(--deep-maroon); margin-bottom: 10px; font-size: 1.6rem; }
 
-    /* Price Section */
     .price-card { 
       background: var(--deep-maroon); 
       color: white; 
@@ -78,16 +72,14 @@
       background-blend-mode: overlay;
       background-size: cover;
     }
-    .price-card h2 { color: white; }
-    .price-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 1.1rem; }
-    .price-table td { padding: 18px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .price-card h2 { color: white; margin-bottom: 30px;}
+    .price-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 1.2rem; }
+    .price-table td { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); }
     .price-val { font-weight: 700; color: var(--gold-accent); text-align: right; }
 
-    /* CTA Button */
     .btn { background: var(--gold-accent); color: white; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: 700; display: inline-block; transition: 0.3s; box-shadow: 0 4px 15px rgba(197,160,89,0.4); border: none; cursor: pointer; }
     .btn:hover { background: #b08d4a; transform: scale(1.05); }
 
-    /* Footer */
     .footer { background: #1a0101; color: white; padding: 80px 5%; text-align: center; }
     
     .whatsapp-btn { 
@@ -115,7 +107,7 @@
 <div class="hero">
   <h1>The Ultimate Spice Experience</h1>
   <p>Authentic Northern Nigerian Kilishi. Premium beef, hand-selected spices, and a tradition of excellence delivered straight to your door.</p>
-  <a href="#orders" class="btn">Shop Our Collection</a>
+  <a href="#orders" class="btn">View Our Packs</a>
 </div>
 
 <section id="products">
@@ -123,21 +115,23 @@
   <div class="grid">
     <div class="card">
       <div class="card-img-container">
-        <img src="https://raw.githubusercontent.com/Padigreen/Project_images/refs/heads/main/small%20pack.png" alt="Kilishi Small Pack">
+        <img src="https://raw.githubusercontent.com/Padigreen/Project_images/refs/heads/main/small%20pack.png" alt="Kilishi Small Waka Pack">
       </div>
       <div class="card-body">
-        <h3>Retail Packs</h3>
-        <p>Expertly seasoned and thinly sliced for the perfect crunch. Great for personal snacking.</p>
+        <h3>Small Waka Pack</h3>
+        <p>Your perfect on-the-go companion. Expertly seasoned for that quick spicy hit wherever you are.</p>
+        <p style="font-weight: bold; margin-top: 10px; color: var(--deep-maroon);">₦2,500</p>
       </div>
     </div>
 
     <div class="card">
       <div class="card-img-container">
-        <img src="https://raw.githubusercontent.com/Padigreen/Project_images/refs/heads/main/family%20pack.png" alt="Kilishi Family Pack">
+        <img src="https://raw.githubusercontent.com/Padigreen/Project_images/refs/heads/main/family%20pack.png" alt="Kilishi Family Jolly Pack">
       </div>
       <div class="card-body">
-        <h3>Family Tubs</h3>
-        <p>Our bulk containers designed for sharing. High-quality beef jerky that lasts longer and stays fresh.</p>
+        <h3>Family Jolly Pack</h3>
+        <p>More meat, more joy! Our premium containers made for sharing with the ones who matter most.</p>
+        <p style="font-weight: bold; margin-top: 10px; color: var(--deep-maroon);">₦4,500</p>
       </div>
     </div>
   </div>
@@ -148,34 +142,30 @@
     <h2>Price List</h2>
     <table class="price-table">
       <tr>
-        <td>Single Retail Pack</td>
-        <td class="price-val">₦1,500</td>
+        <td>Small Waka Pack</td>
+        <td class="price-val">₦2,500</td>
       </tr>
       <tr>
-        <td>Medium Party Bowl</td>
+        <td>Family Jolly Pack</td>
         <td class="price-val">₦4,500</td>
       </tr>
       <tr>
-        <td>Large Family Tub</td>
-        <td class="price-val">₦8,500</td>
-      </tr>
-      <tr>
-        <td>Wholesale Bundle (10+)</td>
-        <td class="price-val">Contact Us</td>
+        <td>Bulk Orders (10+ Packs)</td>
+        <td class="price-val">Contact for Discount</td>
       </tr>
     </table>
     <div style="text-align: center; margin-top: 40px;">
-        <a href="https://wa.me/2348106558031" class="btn">Order via WhatsApp</a>
+        <a href="https://wa.me/2348106558031" class="btn">Order Now via WhatsApp</a>
     </div>
   </div>
 </section>
 
 <div class="footer">
   <h2 style="color: white;">KILISHI DELIGHT</h2>
-  <p style="margin-bottom: 20px; opacity: 0.8;">Ingredients: Beef, Pepper, Ginger, Garlic, Onion, Salt, and Groundnut.</p>
-  <div style="border-top: 1px solid #333; padding-top: 30px; display: inline-block; width: 100%;">
-    <p><strong>Factory Address:</strong> 13 Sanusi Street, Shomolu, Lagos.</p>
-    <p><strong>Hotline:</strong> 0810 655 8031 | 0810 988 9695</p>
+  <p style="margin-bottom: 20px; opacity: 0.8;">Beef • Pepper • Ginger • Garlic • Onion • Salt • Groundnut</p>
+  <div style="border-top: 1px solid #333; padding-top: 30px; width: 100%;">
+    <p><strong>Factory:</strong> 13 Sanusi Street, Shomolu, Lagos.</p>
+    <p><strong>Call/WhatsApp:</strong> 0810 655 8031 | 0810 988 9695</p>
   </div>
   <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 OJ. Maria Ventures. All Rights Reserved.</p>
 </div>
